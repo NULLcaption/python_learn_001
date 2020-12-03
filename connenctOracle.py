@@ -6,7 +6,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # 配置数据库连接路径
-conn = oracle.connect('exp/exp123@10.100.0.10:1530/orcl')
+conn = oracle.connect('p/123@10.0.0.10:1530/orcl')
 # 连接数据库
 cursor = conn.cursor()
 # sql
