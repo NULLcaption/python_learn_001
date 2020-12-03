@@ -5,10 +5,10 @@ import cx_Oracle as oracle
 import pandas as pd
 from sqlalchemy import create_engine
 
-ip = '10.100.0.10'
-port = '1530'
-uname = 'exp'  # 用户名
-pwd = 'exp123'  # 密码
+ip = '0.0.0.0'
+port = '0'
+uname = 'xp'  # 用户名
+pwd = '123'  # 密码
 tnsname = 'orcl'  # 实例名
 
 # 定义变量
