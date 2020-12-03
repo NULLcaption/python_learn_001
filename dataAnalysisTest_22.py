@@ -8,9 +8,9 @@ from email.mime.application import MIMEApplication
 import smtplib
 
 if __name__ == '__main__':
-    fromaddr = 'xg.chen@chinaxpp.com'
-    password = 'Zh19900331'
-    toaddrs = ['ts.pan@chinaxpp.com', 'cxg1207@126.com']
+    fromaddr = ''
+    password = ''
+    toaddrs = ['', '']
 
     content = '2020年马上赢数据通过Python筛选出香飘飘和优乐美的所有数据'
     textApart = MIMEText(content)
