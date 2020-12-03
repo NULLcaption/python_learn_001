@@ -6,9 +6,9 @@ import base64
 from aip import AipOcr
 
 # 获取access_token
-APP_ID = "16973541"
-API_KEY = "qqY04psvCa3EN75tfhcc9Rsx"
-SECRET_KEY = "FyskZIlZzbIhpTgIGrfqX96CC7mbH6Bf"
+APP_ID = ""
+API_KEY = ""
+SECRET_KEY = ""
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
