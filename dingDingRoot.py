@@ -11,8 +11,7 @@ schedule = sched.scheduler(time.time, time.sleep)
 
 
 def toMassage():
-    url = 'https://oapi.dingtalk.com/robot/send?access_token' \
-          '=9f9034185c4d74ea9af1e036a327d0b20ce68e6e325721255f7d35d5709266e7 '
+    url = ''
     HEADERS = {
         "Content-Type": "application/json ;charset=utf-8 "
     }
@@ -21,8 +20,8 @@ def toMassage():
         "text": {"content": '测试成功！'},
         "at": {
             "atMobiles": [
-                "18868345795",
-                "18657273958"
+                "",
+                ""
             ],
             "isAtAll": False}
     }
