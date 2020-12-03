@@ -9,9 +9,9 @@ import requests
 import urllib.request as urllib2
 
 # 获取access_token
-appid = "17556395"
-api_key = "4GGtGmtxbwiWdgcibjRIYRcv"
-secret_key = "2j2609dD1HnxcGABRTC1QCMmfi3PHCG7"
+appid = ""
+api_key = ""
+secret_key = ""
 
 
 def get_access_token():
