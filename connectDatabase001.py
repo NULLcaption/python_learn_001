@@ -5,7 +5,7 @@ import time
 
 # 打开数据库连接
 # 参数顺序：连接IP，用户名，密码，连接的数据库
-db = pymysql.connect("8.133.13.119", "xpp", "Xcrmpp@1234!", "xpp_sfa")
+db = pymysql.connect("1.11.11.11", "root", "1234!", "")
 
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
@@ -13,67 +13,7 @@ cursor = db.cursor()
 
 # 获取union_all结果集
 def get_union_all_function():
-    sql = """SELECT
-                tad.create_date,
-                tad.perform_status_name,
-                tad.verification_ratio,
-                tad.perform_desc,
-                tad.businessType,
-                tad.act_terminal_id,
-                tad.position_code,
-                tad.act_code,
-                tad.user_id,
-                tah.cost_store_item_id,
-                tah.cost_store_id
-            FROM
-                (
-                    SELECT
-                        xpp_sfa.ts_terminal_display_info.create_date AS create_date,
-                        (
-                            CASE
-                            WHEN (
-                                xpp_sfa.ts_terminal_display_info.perform_status = '001'
-                            ) THEN
-                                '正常执行'
-                            WHEN (
-                                xpp_sfa.ts_terminal_display_info.perform_status = '003'
-                            ) THEN
-                                '部分执行'
-                            WHEN (
-                                xpp_sfa.ts_terminal_display_info.perform_status = '006'
-                            ) THEN
-                                '未执行'
-                            END
-                        ) AS perform_status_name,
-                        xpp_sfa.ts_terminal_display_info.verification_ratio AS verification_ratio,
-                        xpp_sfa.ts_terminal_display_info.perform_desc AS perform_desc,
-                        xpp_sfa.ts_terminal_display_info.id AS id,
-                        xpp_sfa.ts_terminal_display_info.act_terminal_id AS act_terminal_id,
-                        xpp_sfa.ts_terminal_display_info.position_code AS position_code,
-                        xpp_sfa.ts_terminal_display_info.act_code AS act_code,
-                        xpp_sfa.ts_terminal_display_info.user_id AS user_id,
-                        xpp_sfa.ts_terminal_display_info.visit_id AS visit_id,
-                        0 AS businessType
-                    FROM
-                        xpp_sfa.ts_terminal_display_info
-                    UNION ALL
-                        SELECT
-                            xpp_sfa.ts_act_display.create_date AS create_date,
-                            xpp_sfa.ts_act_display.perform_status_name AS perform_status_name,
-                            xpp_sfa.ts_act_display.verification_ratio AS verification_ratio,
-                            xpp_sfa.ts_act_display.perform_desc AS perform_desc,
-                            xpp_sfa.ts_act_display.id AS id,
-                            xpp_sfa.ts_act_display.act_terminal_id AS act_terminal_id,
-                            xpp_sfa.ts_act_display.position_code AS position_code,
-                            xpp_sfa.ts_act_display.act_code AS act_code,
-                            xpp_sfa.ts_act_display.user_id AS user_id,
-                            xpp_sfa.ts_act_display.visit_id AS visit_id,
-                            1 AS businessType
-                        FROM
-                            xpp_sfa.ts_act_display
-                ) tad
-            LEFT JOIN xpp_sfa.ts_act_terminal tah ON tah.id = tad.act_terminal_id
-            WHERE DATE_FORMAT(tad.create_date, '%Y-%m-%d') >= '2020-08-11'
+    sql = """
     """
     try:
         datas = pd.read_sql(sql, db)
