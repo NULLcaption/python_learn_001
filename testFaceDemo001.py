@@ -5,9 +5,9 @@ import base64
 from aip import AipFace
 
 # 获取access_token
-APP_ID = "17556395"
-API_KEY = "4GGtGmtxbwiWdgcibjRIYRcv"
-SECRET_KEY = "2j2609dD1HnxcGABRTC1QCMmfi3PHCG7"
+APP_ID = ""
+API_KEY = ""
+SECRET_KEY = ""
 
 # 连接AI接口
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
