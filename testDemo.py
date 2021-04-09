@@ -19,7 +19,7 @@ def post_data():
     data = dict()
     data['_xsrf'] = xsrf
     data['email'] = '394934353@qq.com'
-    data['password'] = 'q123456'
+    data['password'] = ''
     data['rememberme'] = 'y'
 
     post_data = up.urlencode(data).encode('utf-8')  # 编译post数据
